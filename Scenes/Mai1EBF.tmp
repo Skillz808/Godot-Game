@@ -1,0 +1,152 @@
+[gd_scene load_steps=17 format=3 uid="uid://bd8t2i2mbi03c"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_ikmhb"]
+[ext_resource type="FontFile" uid="uid://di6nxsurykyfl" path="res://Fonts/In your face, joffrey!.ttf" id="2_yaxsy"]
+[ext_resource type="Texture2D" uid="uid://w3f7dy6o0ht3" path="res://Assets/sussy.png" id="3_18ivi"]
+[ext_resource type="Script" path="res://Scenes/SusButton.gd" id="4_88dv2"]
+[ext_resource type="AudioStream" uid="uid://c44odksthrrho" path="res://Music/MenuMusic.ogg" id="4_u6o68"]
+
+[sub_resource type="Curve" id="Curve_6xg0m"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_8dh3b"]
+curve_x = SubResource("Curve_6xg0m")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etaxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8hmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a63br"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xhhh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hx4e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0h2w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ra1re"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ln3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqkt3"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ikmhb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CurveXYZTexture_8dh3b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_yaxsy")
+theme_override_font_sizes/font_size = 200
+text = "AMOGUSWARE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yaxsy")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxEmpty_etaxv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d8hmh")
+text = "PLAY"
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yaxsy")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a63br")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2xhhh")
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yaxsy")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3hx4e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v0h2w")
+text = "QUIT"
+
+[node name="Sussy" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(960, 416)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_18ivi")
+
+[node name="Play2" type="Button" parent="MarginContainer/Sussy"]
+custom_minimum_size = Vector2(120, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -214.5
+offset_right = -172.0
+offset_bottom = -214.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_yaxsy")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxEmpty_etaxv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ra1re")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4ln3y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gqkt3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d8hmh")
+script = ExtResource("4_88dv2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u6o68")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/Sussy/Play2" to="." method="_on_play_2_pressed"]
